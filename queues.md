@@ -1,12 +1,17 @@
 
-void display(){
-    if(front==-1){
+void delete(){
+    int y;
+    if(front==-1 || front>rear){
         printf("queue underflow\n");
     }
     else{
-        for(int i=front;i<=rear;i++){
-            printf("%d",queue[i]);
+        y=queue[front];
+        if(front==rear){
+            front=rear==-1;
         }
+        else{
+            front=front+1;
+        }
+    printf("element deleted is:%d\n",y);
     }
-    printf("\n");
 }
